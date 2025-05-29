@@ -115,7 +115,9 @@ services:
 ```bash
 docker compose up --build
 ```
+## Deployment
 
+Url : 'https://news-whis-efjshalzgv3ukm2bj25ru6.streamlit.app/'
 ---
 
 ## 🔄 Framework Comparisons
