@@ -131,6 +131,9 @@ docker compose up --build
 
 Total E2E Response Time: **\~20 seconds**
 
+## Overview of the app
+
+![Screenshot 2025-05-29 125222.png](assets/Screenshot 2025-05-29 125222.png)
 
 **Maintainer**: Ron Antony David
 **GitHub**: https://github.com/Ronydavison007/News-Whis
