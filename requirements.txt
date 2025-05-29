@@ -11,7 +11,7 @@ beautifulsoup4==4.12.3
 selenium==4.25.0
 webdriver-manager==4.0.2
 sec-api==1.0.2
-whisper==1.1.10
+git+https://github.com/openai/whisper.git
 gtts==2.5.3
 transformers==4.44.2
 python-dotenv==1.0.1
