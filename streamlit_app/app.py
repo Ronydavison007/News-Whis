@@ -8,7 +8,7 @@ st.title("Morning Market Brief")
 query = st.text_input("Enter query", "What's our risk exposure in American tech stocks today, and highlight any earnings surprises?")
 audio_file = st.file_uploader("Upload voice query (optional)", type=["wav", "mp3"])
 
-BACKEND_URL = 'https://news-whis.onrender.com'
+BACKEND_URL = 'https://news-whis.onrender.com/process_query'
 
 if st.button("Submit"):
     try:
