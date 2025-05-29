@@ -8,6 +8,8 @@ st.title("Morning Market Brief")
 query = st.text_input("Enter query", "What's our risk exposure in American tech stocks today, and highlight any earnings surprises?")
 audio_file = st.file_uploader("Upload voice query (optional)", type=["wav", "mp3"])
 
+BACKEND_URL = 'https://news-whis.onrender.com'
+
 if st.button("Submit"):
     try:
         with st.spinner("Processing..."):
@@ -16,10 +18,10 @@ if st.button("Submit"):
                 with open(audio_path, "wb") as f:
                     f.write(audio_file.read())
                 with open(audio_path, "rb") as f:
-                    response = requests.post("http://localhost:8000/process_query", files={"audio": f})
+                    response = requests.post(BACKEND_URL, files={"audio": f})
                 os.remove(audio_path)
             else:
-                response = requests.post("http://localhost:8000/process_query", json={"query": query})
+                response = requests.post(BACKEND_URL, json={"query": query})
             
             response.raise_for_status()
             data = response.json()
