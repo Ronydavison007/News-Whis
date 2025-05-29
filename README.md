@@ -85,18 +85,29 @@ Located inside `streamlit_app/` or `orchestrator/`, depending on service.
 Top-level file that defines services:
 
 ```yaml
+version: '3.8'
+
 services:
   api:
-    build: ./orchestrator
+    build: .
+    container_name: newswhis_api
     ports:
       - "8000:8000"
+    command: uvicorn orchestrator.main:app --host 0.0.0.0 --port 8000
+    volumes:
+      - .:/app
 
   ui:
-    build: ./streamlit_app
+    build: .
+    container_name: newswhis_ui
     ports:
       - "8501:8501"
+    command: streamlit run streamlit_app/app.py --server.port 8501 --server.address 0.0.0.0
+    volumes:
+      - .:/app
     depends_on:
       - api
+
 ```
 
 ### Run Dockerized App
